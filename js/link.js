@@ -1,14 +1,14 @@
 const LINKS = {
     // 内部页面链接
     home: 'index.html',
-    trade: '/ths-test.github.io/pages/trade.html',
-    property: '/ths-test.github.io/pages/property.html',
-    industrial: '/ths-test.github.io/pages/industrial.html',
-    about: '/ths-test.github.io/pages/about.html',
-    history: '/ths-test.github.io/pages/history.html',
-    brand: '/ths-test.github.io/pages/brand.html',
-    brand1: '/ths-test.github.io/pages/brand1.html',
-    word: '/ths-test.github.io/pages/word.html'
+    trade: '/hongchuang/pages/trade.html',
+    property: '/hongchuang/pages/property.html',
+    industrial: '/hongchuang/pages/industrial.html',
+    about: '/hongchuang/pages/about.html',
+    history: '/hongchuang/pages/history.html',
+    brand: '/hongchuang/pages/brand.html',
+    brand1: '/hongchuang/pages/brand1.html',
+    word: '/hongchuang/pages/word.html'
     
 };
 
