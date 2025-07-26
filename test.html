@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聚饰云产业园 - 全球饰品产业创新平台</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#E6B800',
+            dark: '#1D2939',
+            light: '#F9FAFB',
+            gray: {
+              100: '#F3F4F6',
+              200: '#E5E7EB',
+              300: '#D1D5DB',
+              400: '#9CA3AF',
+              500: '#6B7280',
+              600: '#4B5563',
+              700: '#374151',
+              800: '#1F2937',
+              900: '#111827',
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .transition-transform {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+      .hover-lift {
+        @apply hover:-translate-y-1 transition-all duration-300;
+      }
+      .section-padding {
+        @apply py-16 md:py-24;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter text-gray-800 bg-light">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <div class="flex items-center">
+          <a href="#" class="flex items-center">
+            <span class="text-primary text-2xl font-bold">聚饰云产业园</span>
+          </a>
+        </div>
+        
+        <!-- 桌面导航 -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#overview" class="text-gray-700 hover:text-primary transition-colors">园区概况</a>
+          <a href="#honors" class="text-gray-700 hover:text-primary transition-colors">荣誉资质</a>
+          <a href="#scale" class="text-gray-700 hover:text-primary transition-colors">园区规模</a>
+          <a href="#layout" class="text-gray-700 hover:text-primary transition-colors">功能布局</a>
+          <a href="#facilities" class="text-gray-700 hover:text-primary transition-colors">配套设施</a>
+          <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">联系我们</a>
+        </nav>
+        
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-gray-700 hover:text-primary">
+          <i class="fa fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="container mx-auto px-4 py-3 space-y-3">
+        <a href="#overview" class="block py-2 text-gray-700 hover:text-primary">园区概况</a>
+        <a href="#honors" class="block py-2 text-gray-700 hover:text-primary">荣誉资质</a>
+        <a href="#scale" class="block py-2 text-gray-700 hover:text-primary">园区规模</a>
+        <a href="#layout" class="block py-2 text-gray-700 hover:text-primary">功能布局</a>
+        <a href="#facilities" class="block py-2 text-gray-700 hover:text-primary">配套设施</a>
+        <a href="#contact" class="block py-2 text-gray-700 hover:text-primary">联系我们</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 -->
+  <section class="pt-24 md:pt-0 bg-gradient-to-r from-primary/90 to-primary h-[80vh] flex items-center relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://picsum.photos/id/1067/1920/1080" alt="园区远景" class="w-full h-full object-cover opacity-20">
+    </div>
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white leading-tight text-shadow mb-6">
+          全球饰品产业创新平台
+        </h1>
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-2xl">
+          国内首个饰品产业链垂直平台暨产城融合一体化产业园区，以"互联网+"战略为引导，推动义乌饰品产业线上线下融合发展。
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#overview" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover-lift">
+            了解更多
+          </a>
+          <a href="#contact" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors hover-lift">
+            联系我们
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-light to-transparent"></div>
+  </section>
+
+  <!-- 园区概况 -->
+  <section id="overview" class="section-padding bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">园区概况</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-3xl mx-auto">聚饰云产业园于2016年4月20日经义乌市经济和信息化委员会批准建设，是义乌饰品产业转型升级的核心平台。</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <img src="https://picsum.photos/id/177/800/600" alt="园区风貌" class="w-full h-auto rounded-xl shadow-xl hover-lift">
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">园区定位与目标</h3>
+          <p class="text-gray-600 mb-4">
+            根据《义乌市饰品特色时尚产业基地试点实施方案》(2015-2020)要求，园区以"互联网+"战略为引导，整合义乌饰品产业链上优秀企业，形成以饰品产业为主导，产业升级为推动，移动互联网为牵引的饰品产业示范园区。
+          </p>
+          <p class="text-gray-600 mb-6">
+            围绕义乌饰品行业转型升级的共性问题与发展需求，以增强科技创新服务有效供给为导向，全力打造融合"线上网络平台+线下产业园区"于一体的义乌饰品产业创新服务综合体。
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 shadow-sm">
+              <div class="text-primary text-3xl mb-2"><i class="fa fa-map-marker"></i></div>
+              <h4 class="font-medium mb-1">地理位置</h4>
+              <p class="text-gray-600 text-sm">义乌市青口工业园通宝路205号</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 shadow-sm">
+              <div class="text-primary text-3xl mb-2"><i class="fa fa-calendar"></i></div>
+              <h4 class="font-medium mb-1">成立时间</h4>
+              <p class="text-gray-600 text-sm">2016年4月20日批准建设</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center text-gray-700">
+            <i class="fa fa-check-circle text-primary mr-2"></i>
+            <span>国内首个饰品产业链垂直平台</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 荣誉资质 -->
+  <section id="honors" class="section-padding bg-gray-50">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">荣誉资质</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-3xl mx-auto">聚饰云产业园凭借卓越的运营管理和创新发展模式，获得多项荣誉认证。</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-md p-6 hover-lift">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fa fa-trophy text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">2019年度金华市小微企业园绩效评价A档</h3>
+          <p class="text-gray-600">园区在综合管理、服务配套、产业发展等方面表现优异，获评最高等级A档。</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md p-6 hover-lift">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fa fa-laptop text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">2019年浙江省数字化示范园区</h3>
+          <p class="text-gray-600">园区以数字化建设为核心，打造智慧化管理和服务体系，获省级示范认定。</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md p-6 hover-lift">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fa fa-industry text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">浙江省义乌饰品产业创新服务综合体</h3>
+          <p class="text-gray-600">作为省级产业创新服务综合体，为饰品产业提供全方位创新服务支持。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 园区规模 -->
+  <section id="scale" class="section-padding bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">园区规模</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-3xl mx-auto">园区拥有完善的硬件设施和丰富的产业资源，为企业提供优质发展环境。</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <img src="https://picsum.photos/id/1071/800/600" alt="园区规模" class="w-full h-auto rounded-xl shadow-xl hover-lift">
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">园区基本数据</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">厂房面积</span>
+                <span class="text-primary font-bold">68,000平方米</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">电商直播网商办公面积</span>
+                <span class="text-primary font-bold">22,000平方米</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 65%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">配套宿舍公寓楼</span>
+                <span class="text-primary font-bold">582间套</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">招商入驻率</span>
+                <span class="text-primary font-bold">95%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+              <h4 class="font-medium text-gray-700 mb-1">规上企业</h4>
+              <p class="text-3xl font-bold text-primary">2家</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+              <h4 class="font-medium text-gray-700 mb-1">2023年引进省外高新企业</h4>
+              <p class="text-3xl font-bold text-primary">2家</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+              <h4 class="font-medium text-gray-700 mb-1">预计规上企业(2023)</h4>
+              <p class="text-3xl font-bold text-primary">6家</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+              <h4 class="font-medium text-gray-700 mb-1">就业人数</h4>
+              <p class="text-3xl font-bold text-primary">2,500+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 园区数据统计 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover-lift">
+          <div class="text-4xl font-bold text-primary mb-2">8</div>
+          <p class="text-gray-600">标准厂房</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover-lift">
+          <div class="text-4xl font-bold text-primary mb-2">1</div>
+          <p class="text-gray-600">17层综合楼</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover-lift">
+          <div class="text-4xl font-bold text-primary mb-2">4</div>
+          <p class="text-gray-600">配套宿舍楼</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover-lift">
+          <div class="text-4xl font-bold text-primary mb-2">100+</div>
+          <p class="text-gray-600">入驻企业</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 功能布局 -->
+  <section id="layout" class="section-padding bg-gray-50">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">功能布局</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-3xl mx-auto">园区功能布局按照产业链各关键环节配置，打造完整的饰品产业生态系统。</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="col-span-1">
+          <div class="bg-white rounded-xl shadow-md p-6 sticky top-24">
+            <h3 class="text-xl font-bold mb-4">五大功能板块</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <i class="fa fa-paint-brush text-primary mt-1 mr-3"></i>
+                <div>
+                  <h4 class="font-medium">设计中心</h4>
+                  <p class="text-gray-600 text-sm">提供专业设计与创意支持</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-cogs text-primary mt-1 mr-3"></i>
+                <div>
+                  <h4 class="font-medium">生产基地</h4>
+                  <p class="text-gray-600 text-sm">现代化生产制造区域</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-print text-primary mt-1 mr-3"></i>
+                <div>
+                  <h4 class="font-medium">3D打印中心</h4>
+                  <p class="text-gray-600 text-sm">先进的3D打印技术支持</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-briefcase text-primary mt-1 mr-3"></i>
+                <div>
+                  <h4 class="font-medium">电商及创客中心</h4>
+                  <p class="text-gray-600 text-sm">电商运营与创新创业孵化</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-warehouse text-primary mt-1 mr-3"></i>
+                <div>
+                  <h4 class="font-medium">智能网仓</h4>
+                  <p class="text-gray-600 text-sm">17000平方米智能仓储</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-span-2">
+          <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h3 class="text-xl font-bold mb-6">17层综合楼功能分布</h3>
+            <div class="space-y-4">
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">17F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">高端创意会所</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">16F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">聚饰云总部</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">12-15F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">电商及配套企业</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">11F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">义乌饰品产业创新服务综合体管理中心</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">6-10F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">饰品设计、创意中心，饰品配套企业</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">5F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">培训中心、公共会议室</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">4F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">众创空间、孵化中心</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">2-3F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">聚饰云形象馆</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">1F</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">配套商铺</h4>
+                </div>
+              </div>
+              <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="font-bold text-primary">地下</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">智能网仓（17000平方米）、食堂、污水处理中心</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold mb-6">厂房功能分布</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="p-4 border border-gray-200 rounded-lg text-center hover:border-primary/50 transition-colors">
+                <h4 class="font-medium mb-2">1号厂房</h4>
+                <p class="text-gray-600 text-sm">饰品生产车间</p>
+              </div>
+              <div class="p-4 border border-gray-200 rounded-lg text-center hover:border-primary/50 transition-colors">
+                <h4 class="font-medium mb-2">2-7号厂房</h4>
+                <p class="text-gray-600 text-sm">饰品生产车间</p>
+              </div>
+              <div class="p-4 border border-gray-200 rounded-lg text-center hover:border-primary/50 transition-colors">
+                <h4 class="font-medium mb-2">8号厂房</h4>
+                <p class="text-gray-600 text-sm">宿舍</p>
+              </div>
+              <div class="p-4 border border-gray-200 rounded-lg text-center hover:border-primary/50 transition-colors">
+                <h4 class="font-medium mb-2">公共设施</h4>
+                <p class="text-gray-600 text-sm">饰品检测中心、废气处理塔等</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 配套设施 -->
+  <section id="facilities" class="section-padding bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">配套设施</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-3xl mx-auto">完善的后勤配套设施，为企业和员工提供全方位保障。</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift">
+          <img src="https://picsum.photos/id/164/600/400" alt="宿舍公寓" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">宿舍公寓</h3>
+            <p class="text-gray-600 mb-4">配套宿舍公寓楼582间套，满足企业员工住宿需求。</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>衣柜、热水器、空调</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>消防管道、公共洗衣机</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>拎包入住，方便快捷</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>蓝领公寓与白领公寓分区</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift">
+          <img src="https://picsum.photos/id/292/600/400" alt="食堂餐饮" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">食堂餐饮</h3>
+            <p class="text-gray-600 mb-4">园区设有多个食堂，为员工提供营养美味的餐饮服务。</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>一号食堂、二号食堂</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>供应一日三餐+夜宵</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>不定期节假日活动</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>多样化餐饮选择</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift">
+          <img src="https://picsum.photos/id/180/600/400" alt="环保设施" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">环保设施</h3>
+            <p class="text-gray-600 mb-4">重金打造环保处理系统，实现可持续发展。</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>污水处理中心</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>废气处理塔多座</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>完善的环保检测系统</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-check text-primary mr-2"></i>
+                <span>与周围环境和谐共存</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 bg-primary/5 rounded-xl p-8 border border-primary/20">
+        <h3 class="text-2xl font-bold text-center mb-8">其他配套服务</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="p-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fa fa-graduation-cap text-primary text-2xl"></i>
+            </div>
+            <h4 class="font-medium mb-2">培训中心</h4>
+            <p class="text-gray-600 text-sm">专业技能培训</p>
+          </div>
+          <div class="p-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fa fa-users text-primary text-2xl"></i>
+            </div>
+            <h4 class="font-medium mb-2">众创空间</h4>
+            <p class="text-gray-600 text-sm">创新创业孵化</p>
+          </div>
+          <div class="p-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fa fa-shopping-bag text-primary text-2xl"></i>
+            </div>
+            <h4 class="font-medium mb-2">配套商铺</h4>
+            <p class="text-gray-600 text-sm">便捷商业服务</p>
+          </div>
+          <div class="p-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fa fa-shield text-primary text-2xl"></i>
+            </div>
+            <h4 class="font-medium mb-2">物业服务</h4>
+            <p class="text-gray-600 text-sm">专业物业管理</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 招商入驻 -->
+  <section class="section-padding bg-primary text-white">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-6">诚邀入驻</h2>
+      <p class="max-w-2xl mx-auto mb-8 text-white/90">聚饰云产业园招商入驻率已达95%，为企业提供优质发展平台，期待您的加入。</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover-lift">
+          咨询招商详情
+        </a>
+        <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors hover-lift">
+          联系我们
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section id="contact" class="section-padding bg-light">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">联系我们</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-3xl mx-auto">欢迎前来参观考察，我们将为您提供详细的园区介绍和入驻咨询。</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="bg-white rounded-xl shadow-md p-8">
+            <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fa fa-map-marker text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">园区地址</h4>
+                  <p class="text-gray-600">义乌市青口工业园通宝路205号</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fa fa-phone text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">联系电话</h4>
+                  <p class="text-gray-600">0579-XXXXXXXX</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fa fa-envelope text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">电子邮箱</h4>
+                  <p class="text-gray-600">info@jushiyun.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fa fa-building text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">运营单位</h4>
+                  <p class="text-gray-600">浙江高登福物业管理有限公司</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="rounded-xl overflow-hidden shadow-xl h-80 md:h-96 hover-lift">
+            <!-- 此处可嵌入实际地图 -->
+            <img src="https://picsum.photos/id/1019/800/600" alt="园区位置地图" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">聚饰云产业园</h3>
+          <p class="text-gray-400 mb-4">全球饰品产业创新平台，国内首个饰品产业链垂直平台暨产城融合一体化产业园区。</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-weixin text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-weibo text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-linkedin text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2">
+            <li><a href="#overview" class="text-gray-400 hover:text-white transition-colors">园区概况</a></li>
+            <li><a href="#honors" class="text-gray-400 hover:text-white transition-colors">荣誉资质</a></li>
+            <li><a href="#scale" class="text-gray-400 hover:text-white transition-colors">园区规模</a></li>
+            <li><a href="#layout" class="text-gray-400 hover:text-white transition-colors">功能布局</a></li>
+            <li><a href="#facilities" class="text-gray-400 hover:text-white transition-colors">配套设施</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">服务支持</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">招商政策</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">企业服务</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">人才引进</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">培训中心</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">联系我们</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-400">
+              <i class="fa fa-map-marker mr-2"></i>
+              <span>义乌市青口工业园通宝路205号</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i class="fa fa-phone mr-2"></i>
+              <span>0579-XXXXXXXX</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i class="fa fa-envelope mr-2"></i>
+              <span>info@jushiyun.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+        <p>&copy; 2023 聚饰云产业园 版权所有 | 运营单位：浙江高登福物业管理有限公司</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 返回顶部按钮 -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md');
+        navbar.classList.remove('shadow-sm');
+      } else {
+        navbar.classList.remove('shadow-md');
+        navbar.classList.add('shadow-sm');
+      }
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // 关闭移动菜单（如果打开）
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // 返回顶部按钮
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.remove('opacity-0', 'invisible');
+        backToTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopBtn.classList.add('opacity-0', 'invisible');
+        backToTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // 元素进入视口时的动画
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.hover-lift');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('animate-fadeIn');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    // 初始加载时执行一次
+    animateOnScroll();
+  </script>
+</body>
+</html>

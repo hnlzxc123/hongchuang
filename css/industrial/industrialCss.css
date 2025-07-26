@@ -16,6 +16,8 @@ a{
 img{
     max-width: 100%;
     height: auto;
+    display: initial;
+    vertical-align: initial;
 }
 .nav-top{
     position: fixed;
@@ -216,7 +218,7 @@ img{
     margin-right: 5px;
 }
 .aboutWrap{
-    padding: 70px 0 120px;
+    padding: 70px 0;
     text-align: left;
 }
 .w1300{
@@ -224,22 +226,21 @@ img{
     margin: 0px auto;
 }
 .about-title ,.honor-title {
-    font-size: 36px;
+    font-size: 40px;
     text-align: center;
     position: relative;
     padding-bottom: 15px;
     margin-bottom: 35px;
-    font-weight: bold;
+    font-weight: 700;
 }
 .about-title span,.honor-title span{
     content: "";
     position: absolute;
-    left: 50%;
+    left: 47%;
     bottom: 0px;
-    width: 42px;
-    height: 1px;
+    width: 5rem;
+    height: 0.25rem;
     background: #111;
-    margin-left: -21px;
 }
 .about-main {
     text-align: left;
@@ -269,6 +270,33 @@ img{
     height: 100px;
     border-right: 1px dashed #dddddd
 }
+
+.systemWrap{
+    padding: 0 0 120px;
+}
+.systemW1300{
+    overflow: hidden;
+}
+.systemLeft{
+    float: left;
+    width: 50%;
+}
+.systemRight{
+    background: #f0f0f0;
+    margin-top: 28px;
+    float: right;
+    width: 50%;
+    height: 450px;
+}
+.systemTitle{
+    margin-top: 60px;
+}
+.systemText{
+    margin-left: 100px;
+    line-height: 60px;
+}
+
+
 .brand-honor {
     overflow: hidden;
     padding: 70px 0;
@@ -438,4 +466,15 @@ img{
     width: 100%;
     height: 99%;
     border: 0px;
+}
+
+.div-facilities-img{
+    overflow: hidden;
+}
+.div-facilities-img img{
+    float: left;
+    width: 50%;
+}
+.honors-i{
+    margin: auto auto 24px;
 }
