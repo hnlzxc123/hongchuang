@@ -1,14 +1,14 @@
 const LINKS = {
     // 内部页面链接
     home: 'index.html',
-    trade: '/pages/trade.html',
-    property: '/pages/property.html',
-    industrial: '/pages/industrial.html',
-    about: '/pages/about.html',
-    history: '/pages/history.html',
-    brand: '/pages/brand.html',
-    brand1: '/pages/brand1.html',
-    word: '/pages/word.html'
+    trade: '/hongchuang/pages/trade.html',
+    property: '/hongchuang/pages/property.html',
+    industrial: '/hongchuang/pages/industrial.html',
+    about: '/hongchuang/pages/about.html',
+    history: '/hongchuang/pages/history.html',
+    brand: '/hongchuang/pages/brand.html',
+    brand1: '/hongchuang/pages/brand1.html',
+    word: '/hongchuang/pages/word.html'
     
 };
 
